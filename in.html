@@ -1,24 +1,407 @@
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];
-t=b.createElement(e);t.async=!0;
-t.src='https://connect.facebook.net/en_US/fbevents.js';
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s);
-}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XEB | متجرنا</title>
 
-fbq('init', '832391915365994');
-fbq('track', 'PageView');
-</script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '832391915365994');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=832391915365994&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=832391915365994&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d12;
+      --surface:   #15151e;
+      --border:    #2a2a3a;
+      --accent1:   #c8a96e;   /* gold — warmth & luxury */
+      --accent2:   #7b6fff;   /* violet — modernity */
+      --text:      #f0ede8;
+      --muted:     #888;
+      --radius:    18px;
+      --font:      'Cairo', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,18,.88);
+      backdrop-filter: blur(14px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      background: linear-gradient(120deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-badge {
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 30% 50%, rgba(123,111,255,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 35% at 70% 50%, rgba(200,169,110,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent1);
+      border: 1px solid rgba(200,169,110,.35);
+      border-radius: 100px;
+      padding: .3rem 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(100deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto 2.4rem;
+      line-height: 1.7;
+    }
+
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .trust-item .icon { font-size: 1rem; }
+
+    /* ── CARDS GRID ── */
+    .products {
+      padding: 1rem 1.5rem 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent1);
+      box-shadow: 0 20px 50px rgba(200,169,110,.13);
+    }
+
+    .card-visual {
+      position: relative;
+      height: 220px;
+      background: #1a1a26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      overflow: hidden;
+    }
+
+    .card-visual .badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent1);
+      color: #0d0d12;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: .3rem .75rem;
+      border-radius: 100px;
+    }
+
+    .card-visual .glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 60%, rgba(200,169,110,.08), transparent 70%);
+    }
+
+    /* card 2 uses violet glow */
+    .card:nth-child(2) .card-visual .glow {
+      background: radial-gradient(circle at 50% 60%, rgba(123,111,255,.1), transparent 70%);
+    }
+    .card:nth-child(2):hover {
+      border-color: var(--accent2);
+      box-shadow: 0 20px 50px rgba(123,111,255,.13);
+    }
+    .card:nth-child(2) .card-cta {
+      background: linear-gradient(100deg, var(--accent2), #9b8fff);
+    }
+
+    .card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .card-label {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent1);
+    }
+
+    .card:nth-child(2) .card-label { color: var(--accent2); }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-price-row {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-top: .4rem;
+    }
+
+    .price-now {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .price-old {
+      font-size: .85rem;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    .price-save {
+      font-size: .75rem;
+      background: rgba(200,169,110,.15);
+      color: var(--accent1);
+      padding: .2rem .55rem;
+      border-radius: 100px;
+    }
+
+    .card:nth-child(2) .price-save {
+      background: rgba(123,111,255,.15);
+      color: var(--accent2);
+    }
+
+    .card-cta {
+      display: block;
+      background: linear-gradient(100deg, var(--accent1), #e6c87a);
+      color: #0d0d12;
+      font-family: var(--font);
+      font-size: .9rem;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      padding: .85rem 1.2rem;
+      border-radius: 10px;
+      margin-top: .6rem;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: opacity .2s, transform .15s;
+    }
+
+    .card-cta:hover { opacity: .88; transform: scale(.98); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      nav { padding: 1rem; }
+      .hero { padding: 4rem 1rem 2.5rem; }
+      .trust-row { gap: 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="logo">XEB</span>
+    <span class="nav-badge">🇲🇦 التوصيل مجاني في المغرب</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">✦ منتجات مختارة بعناية</p>
+    <h1>تسوّق بذكاء،<br /><span>وفّر أكثر</span></h1>
+    <p>اكتشف مجموعتنا المختارة من المنتجات العملية ذات الجودة العالية — التوصيل مجاني والدفع عند الاستلام في جميع أنحاء المغرب.</p>
+
+    <div class="trust-row">
+      <span class="trust-item"><span class="icon">🚚</span> شحن مجاني</span>
+      <span class="trust-item"><span class="icon">✅</span> دفع عند الاستلام</span>
+      <span class="trust-item"><span class="icon">⭐</span> +5000 عميل راضٍ</span>
+      <span class="trust-item"><span class="icon">🔒</span> أمان تام</span>
+    </div>
+  </section>
+
+  <!-- PRODUCT CARDS -->
+  <div class="products">
+
+    <!-- Card 1 – وسادة الحمل -->
+    <a class="card" href="https://azurpera.github.io/coussin/" onclick="fbq && fbq('track', 'ViewContent', {content_name: 'coussin'})">
+      <div class="card-visual">
+        <span class="badge">الأكثر مبيعاً</span>
+        <div class="glow"></div>
+        🛏️
+      </div>
+      <div class="card-body">
+        <span class="card-label">صحة الأمومة</span>
+        <h2 class="card-title">وسادة الحمل على شكل U</h2>
+        <p class="card-desc">
+          مصمَّمة لتحتضن جسمك بالكامل — تُريح ظهرك وبطنك وركبتيك طوال فترة الحمل وما بعدها. غلاف مخملي ناعم قابل للخلع والغسيل.
+        </p>
+        <div class="card-price-row">
+          <span class="price-now">799 درهم</span>
+          <span class="price-old">1200 درهم</span>
+          <span class="price-save">وفّري 34%</span>
+        </div>
+        <span class="card-cta">اطلبي الآن ←</span>
+      </div>
+    </a>
+
+    <!-- Card 2 – واقي شمس السيارة -->
+    <a class="card" href="https://azurpera.github.io/landing-page/" onclick="fbq && fbq('track', 'ViewContent', {content_name: 'landing-page'})">
+      <div class="card-visual">
+        <span class="badge">عرض محدود</span>
+        <div class="glow"></div>
+        🚗
+      </div>
+      <div class="card-body">
+        <span class="card-label">إكسسوار السيارة</span>
+        <h2 class="card-title">واقي شمس النوافذ الاحترافي</h2>
+        <p class="card-desc">
+          يخفض حرارة السيارة، يمنع البعوض والحشرات، ويحمي من الأشعة UV. يُركَّب ويُخلع في أقل من دقيقة على أي نافذة جانبية.
+        </p>
+        <div class="card-price-row">
+          <span class="price-now">99 درهم</span>
+          <span class="price-old">180 درهم</span>
+          <span class="price-save">وفّر 45%</span>
+        </div>
+        <span class="card-cta">اطلب الآن ←</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>🚚 توصيل مجاني · ✅ دفع عند الاستلام · 🇲🇦 المغرب</div>
+    <div style="margin-top:.5rem">جميع الحقوق محفوظة © 2025 · XEB</div>
+  </footer>
+
+</body>
+</html>
